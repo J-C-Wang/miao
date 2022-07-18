@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>oald-layout-block</title>
+    <style>
+
+      html, body, section {
+        margin: 0;
+        height: 100%;
+      }
+
+      section {
+        font-size: 0;
+      }
+
+      section > * {
+        display: inline-block;
+      }
+
+      section > div {
+        width: calc(100% - 450px);
+        height: 100%;
+      }
+
+      section > aside {
+        width: 150px;
+        height: 100%;
+      }
+
+      div {
+        background-color: rgb(215, 229, 86);
+      }
+
+      aside {
+        background-color: darksalmon;
+      }
+
+      header {
+        height: 100px;
+      }
+
+      main {
+        height: calc(100% - 100px);
+        overflow: scroll;
+      }
+
+    </style>
+
+  </head>
+
+  <body>
+
+    <section>
+      <aside></aside>
+      <div>
+        <header></header>
+        <main></main>
+      </div>
+      <aside></aside>
+      <aside></aside>
+    </section>
+
+  </body>
+</html>
