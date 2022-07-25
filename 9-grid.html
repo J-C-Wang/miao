@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>css-sprite</title>
+    <style>
+      .table1 {
+        border-collapse: collapse;
+      }
+      .table1 td {
+        width: 50px;
+        height: 50px;
+        text-align: center;
+      }
+      .table1 tr {
+        border: 5px solid blue;
+      }
+      .table1 col {
+        border: 5px solid blue;
+      }
+      .table1 td:hover {
+        border: 5px solid red;
+        cursor: pointer;
+      }
+
+      .float {
+        position: relative;
+        left: -188px;
+        top: 13px;
+        list-style-type: none;
+        padding: 0;
+        width: 180px;
+        height: 180px;
+        margin: 0;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .bgc {
+        position: relative;
+        list-style-type: none;
+        padding: 0;
+        width: 180px;
+        height: 180px;
+        display: inline-block;
+      }
+      .float li {
+        line-height: 52px;
+        text-align: center;
+        width: 52px;
+        height: 52px;
+        float: left;
+        margin: 2.5px;
+      }
+      .bgc li {
+        position: relative;
+        line-height: 52px;
+        text-align: center;
+        width: 52px;
+        height: 52px;
+        border: 5px solid blue;
+        margin: -5px;
+        display: inline-block;
+      }
+      .float li:hover {
+        border: 5px solid red;
+        margin: -2.5px;
+        display: block;
+      }
+
+
+      div {
+        width: 200px;
+        height: 100px;
+        border: 2px solid red;
+        background-color:  green;
+        font-size: 10px;
+        transition: font-size 3s linear,background-color .1s ;
+        cursor: pointer;
+        padding: 0;
+        display: flex;
+        flex-flow: column-reverse wrap ;
+      }
+      div:hover {
+        font-size: 50px;
+        background-color: rgb(100, 194, 213);
+      }
+ </style>
+
+</head>
+
+<body>
+  <h3>table</h3>
+  <table class="table1">
+    <col>
+    <col>
+    <col>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+  <h3>float</h3>
+  <ul class="bgc">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+  <ul class="float">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+
+
+<div>订阅博客</div>
+</body>
+</html>
