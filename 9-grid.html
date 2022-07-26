@@ -27,47 +27,26 @@
       }
 
       .float {
-        position: relative;
-        left: -188px;
-        top: 13px;
         list-style-type: none;
         padding: 0;
-        width: 180px;
-        height: 180px;
-        margin: 0;
+        width: 170px;
+        height: 170px;
         cursor: pointer;
-        display: inline-block;
-      }
-      .bgc {
-        position: relative;
-        list-style-type: none;
-        padding: 0;
-        width: 180px;
-        height: 180px;
-        display: inline-block;
+        display: flow-root;
       }
       .float li {
-        line-height: 52px;
+        line-height: 50px;
         text-align: center;
-        width: 52px;
-        height: 52px;
+        width: 50px;
+        height: 50px;
         float: left;
-        margin: 2.5px;
-      }
-      .bgc li {
-        position: relative;
-        line-height: 52px;
-        text-align: center;
-        width: 52px;
-        height: 52px;
+        margin: 0 -5px -5px 0;
         border: 5px solid blue;
-        margin: -5px;
-        display: inline-block;
+        position: relative;
       }
       .float li:hover {
         border: 5px solid red;
-        margin: -2.5px;
-        display: block;
+        z-index: 99;
       }
       .flex {
         list-style-type: none;
@@ -77,12 +56,13 @@
         cursor: pointer;
         display: flex;
         flex-wrap: wrap;
+        align-content: flex-start;
       }
       .flex li {
         width: 50px;
         height: 50px;
         border: 5px solid blue;
-        margin: -2.5px;
+        margin: 0 -5px -5px 0;
         text-align: center;
         line-height: 50px;
       }
@@ -133,17 +113,6 @@
     </tr>
   </table>
   <h3>float</h3>
-  <ul class="bgc">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
   <ul class="float">
     <li>1</li>
     <li>2</li>
@@ -155,6 +124,7 @@
     <li>8</li>
     <li>9</li>
   </ul>
+  <h3>flex</h3>
   <ul class="flex">
     <li>1</li>
     <li>2</li>
