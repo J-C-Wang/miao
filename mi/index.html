@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>JS Bin</title>
+  <title>mi.fake</title>
   <style type="text/less">
     body,html {
       padding: 0;
@@ -14,17 +14,18 @@
       height: 40px;
       margin: auto;
       section {
-
         margin: 0 auto;
         width: 1226px;
-        ul.u1 {
-
-          list-style: none;
+        height: 40px;
+        position: relative;
+        .u1,.u2 {
           margin: auto 0;
           padding: 0;
           height: 40px;
-          li {
-            margin: 0;
+          width: 1090px;
+          a {
+            text-decoration: none;
+            margin: 14px 0 0 -5px;
             display: inline-block;
             color: rgb(176,176,176);
             padding: 0 10px;
@@ -32,45 +33,94 @@
             font-size: 12px;
             height: 12px;
             line-height:12px;
-            &:nth-child(-n+12) {
-              border-right: 1px solid rgb(66,66,66)
+            text-align: center;
+            cursor: pointer;
+            &:hover {
+              color: rgb(255,255,255);
             }
           }
-          &:hover {
-            color: rgb(255,255,255);
+        }
+        .u1 {
+          position: absolute;
+          display: flex;
+          justify-content: flex-start;
+          a {
+            z-index: 99;
+            &:nth-child(-n+12) {
+              border-right: 1px solid rgb(66,66,66);
+          }
+          }
+        }
+        .u2 {
+          position: absolute;
+          display: flex;
+          justify-content: flex-end;
+          a {
+            &:nth-child(-n+2) {
+              border-right: 1px solid rgb(66,66,66);
+          }
+          }
+         }
+        .u3 {
+          width: 90px;
+          height: 20px;
+          background-color: rgb(66, 66, 66);
+          position: relative;
+          left: 1090px;
+          padding: 10px 15px;
+          a {
+            text-decoration: none;
+            color: rgb(176,176,176);
+            display: inline-block;
+            font-size: 12px;
+            height: 20px;
+            line-height:12px;
+            text-align: center;
+
+            .img {
+
+              display: inline-block;
+              background-image: url(www-mi-com-8m4cioe\img\icon\天猫购物车.png);
+              background-size: 15px 15px;
+              height: 15px;
+              width: 15px;
+              background-color: rgba(255, 255, 255, 0);
+            }
           }
         }
       }
-
     }
+
+
+
   </style>
 </head>
 <body>
   <header>
     <section>
-      <ul class="u1">
-        <li>小米官网</li>
-        <li>小米商城</li>
-        <li>MIUI</li>
-        <li>loT</li>
-        <li>云服务</li>
-        <li>天星数科</li>
-        <li>有品</li>
-        <li>小爱开放平台</li>
-        <li>企业团购</li>
-        <li>资质证照</li>
-        <li>协议规则</li>
-        <li>下载app</li>
-        <li>Select Location</li>
-      </ul>
-      <ul class="u2">
-        <li>登录</li>
-        <li>注册</li>
-        <li>消息通知</li>
-      </ul>
-      <ul class="u3">
-        <li></li>
-      </ul>
+      <div class="u1">
+        <a href="#">小米官网</a >
+        <a href="#">小米商城</a >
+        <a href="#">MIUI</a >
+        <a href="#">loT</a >
+        <a href="#">云服务</a >
+        <a href="#">天星数科</a >
+        <a href="#">有品</a >
+        <a href="#">小爱开放平台</a >
+        <a href="#">企业团购</a >
+        <a href="#">资质证照</a >
+        <a href="#">协议规则</a >
+        <a href="#">下载app</a >
+        <a href="#">Select Location</a >
+      </div>
+      <div class="u2">
+        <a href="#">登录</a >
+        <a href="#">注册</a >
+        <a href="#">消息通知</a >
+      </div>
+      <div class="u3">
+        <a href="#"><span class="img"></span> 购物车（0）</a >
+      </div>
     </section>
 
   </header>
