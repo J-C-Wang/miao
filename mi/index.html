@@ -4,11 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>mi.fake</title>
+  <link rel="stylesheet" href="my-iconfont.css">
   <style type="text/less">
-
     body,html {
       padding: 0;
       margin: 0;
+    }
+    body {
+      overflow: scroll;
+      position: relative;
     }
     header {
       background-color: rgb(51,51,51);
@@ -21,7 +25,7 @@
         position: relative;
         .u1,.u2 {
           margin: auto 0;
-          padding: 0;
+          padding: 14px 0;
           height: 40px;
           width: 1090px;
           a {
@@ -29,10 +33,10 @@
             margin: 0;
             display: inline-block;
             color: rgb(176,176,176);
-            padding: 14px 7px;
+            padding: 0px 7px;
             box-sizing: border-box;
             font-size: 12px;
-            height: 12;
+            height: 12px;
             line-height:12px;
             text-align: center;
             cursor: pointer;
@@ -130,6 +134,7 @@
               text-align: center;
               line-height: 100px;
               box-shadow: 0 0 3px 3px rgba(66, 66, 66, 0.1);
+              background-color:  white;
             }
           &:hover {
             .shop {
@@ -140,6 +145,7 @@
             }
             .shopping {
               display: block;
+              z-index: 99;
             }
             }
         }
@@ -149,9 +155,7 @@
         margin: 0 auto;
         width: 1226px;
         height: 100px;
-        position: relative;
         display: flex;
-
         .logo {
           position: relative;
           height: 80px;
@@ -168,51 +172,386 @@
           }
         }
         .list {
-          position: relative;
-          height: 100px;
           width: 850px;
           .out {
-            position: relative;
             list-style: none;
             padding: 0;
             margin:  0;
             height: 100px;
-
-            li {
+            > li {
               display: inline-block;
               margin: 0 20px 0 0;
-              position: relative;
               line-height: 100px;
-              height: 100px;
+              float: left;
             }
             .block {
               width: 160px;
-
+              height: 100px ;
             }
-            .a1 {
-
-              .pic {
+            .a {
+              cursor: pointer;
+              div {
+                display: none;
                 position: absolute;
-                top: 100%;
+                top: 140px;
                 right: 0;
-                display: block;
-                list-style: none;
-                padding: 0;
-                margin: 0;
                 height: 230px;
-                width: 1226px;
-                line-height: 230px;
-                li {
-                  display: inline-block;
+                width: 100%;
+                box-sizing: border-box;
+                border-top: 1px solid rgb(224,224,224) ;
+                box-shadow: 0 3px 3px  rgba(66, 66, 66, 0.05);
+                .pic {
+                  position: relative;
+                  top: 0;
+                  right: ;
+                  display: block;
+                  list-style: none;
+                  padding: 0;
+                  margin: auto;
+                  height: 230px;
+                  width: 1226px;
+                  line-height: 230px;
+                  li {
+                    position: relative;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    width: 200px;
+                    height: 100px;
+                    top: 12px;
+                    border-left: 1px solid rgb(224,224,224);
+                    a {
+                      text-decoration: none;
+                      cursor: pointer;
+                      position: absolute;
+                      line-height: 2em;
+                      font-size: .3em;
+                      img {
+                      height: 110px;
+                      width: 160px;
+                      position: absolute;
+                      top: 0px;
+                      left: 20px;
+                      }
+                      span:nth-child(2) {
+                        display: block;
+                        position: relative;
+                        text-align: center;
+                        top: 130px;
+                        left: 0;
+                        width: 200px;
+                        color: black;
+                      }
+                      span:nth-child(4) {
+                        display: block;
+                        position: relative;
+                        text-align: center;
+                        top: 130px;
+                        left: 0;
+                        width: 200px;
+                        color: rgb(255,106,0);
+                      }
+                    }
+                  }
+                  :first-child{
+                    border-left: 0;
+                  }
                 }
               }
+            &:hover {
+              div {
+                display: block;
+                z-index: 99;
+                background-color: #fff;
+              }
+            }
+            }
+            .a2 {
+              a{
+                text-decoration: none;
+                color: black;
+              }
+
+            }
+          }
+        }
+        .search {
+          margin: 25px 0 25px 30px;
+          height: 50px;
+          width: 296px;
+          display: flex;
+          justify-content:flex-end;
+          position: relative;
+          input {
+            width: 245px;
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            border-right: none;
+            outline: none;
+            padding: 0 10px;
+          }
+          button {
+            width: 52px;
+            box-sizing: border-box;
+            border: 1px solid #e0e0e0;
+            background-color: white;
+            cursor: pointer;
+            span {
+              font-size: 1.8em;
+              line-height: 38px;
+              padding:1px 6px;
+            }
+          }
+          .suggestions {
+            width: 245px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            left: 0;
+            top: 100%;
+            display: none;
+            background-color: #fff;
+            border: 1px solid #ff6700;
+            box-sizing: border-box;
+            border-top: none;
+            li {
+
+              font-size: .75em;
+              padding: .5em 15px;
+            }
+          }
+          &:focus-within {
+            input,button {
+              border-color: #ff6700;
+            }
+            .suggestions {
+              display: block;
+            }
+          }
+          button:hover {
+            background-color: #ff6700;
+            color: white;
+          }
+
+        }
+      }
+    }
+    main {
+      position: relative;
+      top: 100px;
+      .main-header {
+        width: 1226px;
+        margin: auto;
+        height: 670px;
+        position: relative;
+        .body-list-ul {
+          width: 234px;
+          height: 420px;
+          position: relative;
+          list-style-type: none;
+          padding: 20px 0;
+          margin: 0;
+          background-color: #69656599;
+          z-index: 90;
+          .body-list {
+            cursor: pointer;
+            width: 204px;
+            height: 42px;
+            padding: 0 0 0 30px;
+            line-height: 42px;
+            font-size: 14px;
+            color: white;
+            &::after {
+              font-family: 图标字体;
+              float: right;
+              content: '\E623';
+              font-size: 1.2em;
+              padding-right: 20px;
+            }
+            div {
+              display: none;
+              position: absolute;
+              left: 100%;
+              top: 0;
+              height: 460px;
+              padding: 2px 0;
+              box-shadow: 3px 3px 3px  rgba(66, 66, 66, 0.1);
+              box-sizing: border-box;
+              border: 1px solid rgba(66, 66, 66, 0.1);
+              background-color: #fff;
+              a {
+                color: black;
+                display: flex;
+                height: 76px;
+                width: 250px;
+                text-decoration: none;
+                line-height: 76px;
+                img {
+                  display: block;
+                  width: 40px;
+                  height: 40px;
+                  padding: 15px 15px;
+                }
+                span {
+                  display: block;
+                }
+              }
+            }
+            & :nth-child(n+7) {
+                margin-left: 248px;
+              }
+              & :nth-child(n+13) {
+                margin-left: 496px;
+              }
+              & :nth-child(n+19) {
+                margin-left: 744px;
+                width: ;
+              }
+              & :nth-child(6n+7) {
+                margin-top: -456px;
+              }
+          &:hover div {
+              display: block;
+          }
+          }
+        }
+        .slider {
+          overflow: hidden;
+          position: relative;
+          width: 1226px;
+          height: 460px;
+          top: -460px;
+          cursor: pointer;
+          input {
+            position: relative;
+            display: none;
+            top: 420px;
+          }
+          .main-img {
+            top: 0;
+            width: 1226px;
+            height: 460px;
+            position: relative;
+            display: inline-block;
+            img {
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              transition: 1s;
+              opacity: 0;
+            }
+          }
+          .lab {
+            right: 30px;
+            bottom: 22px;
+            position: absolute;
+            font-size: 0;
+            z-index: 8;
+            label {
+              width: 6px;
+              height: 6px;
+              border-radius: 6px;
+              margin: 4px;
+              display: inline-block;
+              cursor: pointer;
+              background-color: black;
+              border: 2px solid hsla(0,0%,100%,.3);
+
+            }
+          }
+          input:nth-child(1):checked ~ .main-img img:nth-child(1),
+          input:nth-child(2):checked ~ .main-img img:nth-child(2),
+          input:nth-child(3):checked ~ .main-img img:nth-child(3),
+          input:nth-child(4):checked ~ .main-img img:nth-child(4) {
+            opacity: 1;
+          }
+          input:nth-child(1):checked ~ .lab label:nth-child(1),
+          input:nth-child(2):checked ~ .lab label:nth-child(2),
+          input:nth-child(3):checked ~ .lab label:nth-child(3),
+          input:nth-child(4):checked ~ .lab label:nth-child(4) {
+            background-color: hsla(0,0%,100%,.4);
+            border-color: rgba(0,0,0,.4);
+          }
+        }
+        .main-bottom {
+          position: absolute;
+          margin-top: 14px;
+          width: 1226px;
+          height: 170px;
+          bottom: 27px;
+          display: flex;
+          justify-content: space-between;
+          ul {
+            list-style: none;
+            padding: 3px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
+
+            flex-wrap: wrap;
+            background-color: #5F5750;
+            width: 228px;
+            height: 164px;
+            margin: 0;
+            li {
+              width: 70px;
+              height: 82px;
+              padding: 0 3px;
+              position: relative;
+              &::after {
+                top: 6px;
+                left: 0;
+                width: 1px;
+                height: 70px;
+                position: absolute;
+                content: "";
+                background-color: #665e57;
+              }
+              &:nth-child(n+3)::before {
+                top: -1px;
+                left: 6px;
+                width: 64px;
+                height: 1px;
+                position: absolute;
+                content: "";
+                background-color: #665e57;
+              }
+              a {
+                display: block;
+                padding: 18px 0 0 0;
+                width: 70px;
+                height: 46px;
+                font-size: 12px;
+                text-align: center;
+                color: rgb(202, 202, 202);
+                text-decoration: none;
+                img {
+                  width: 24px;
+                  height: 24px;
+                  margin: 0 23px 0 23px;
+
+                }
+                &:hover {
+                  color: white;
+                  img {
+                    color: white;
+                  }
+                }
+              }
+
+            }
+          }
+          div {
+            img {
+              width: 316px;
+              height:170px;
+
             }
           }
         }
       }
+
     }
-
-
 
   </style>
 </head>
@@ -246,7 +585,7 @@
       </div>
       <div class="u3">
         <a href="#" class="shop">
-          <svg t="1658977244733" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1403" width="20" height="16"><path d="M946.656318 316.671982l-84.171311 336.649122c0 61.918295-50.249912 112.168207-112.168207 112.168207h-308.616101c-61.990545 0-112.168207-50.249912-112.168208-112.168207L273.3942 316.671982h0.252875L217.255909 148.365484H77.054681c-15.569886 0-28.105271-12.535384-28.10527-28.105271 0-15.461511 12.535384-28.033021 28.10527-28.03302h181.564383l70.010302 224.444789h618.026952zM338.852748 372.810273l46.709659 280.510831c0 30.959148 25.179143 56.138291 56.138292 56.138291h308.616101c30.959148 0 56.029916-25.179143 56.029916-56.138291l70.190926-280.510831H338.852748z m102.847951 448.817329c30.959148 0 56.138291 25.070768 56.138291 56.138291 0 30.959148-25.179143 56.029916-56.138291 56.029916s-56.138291-25.070768-56.138292-56.029916c0-31.067523 25.179143-56.138291 56.138292-56.138291z m280.51083 0c31.067523 0 56.138291 25.070768 56.138291 56.138291 0 30.959148-25.070768 56.029916-56.138291 56.029916-30.959148 0-56.029916-25.070768-56.029916-56.029916-0.036125-31.067523 25.070768-56.138291 56.029916-56.138291z" fill="#231815" p-id="1404"></path></svg>
+          <svg t="1658977244733" class="icon1" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1403" width="20" height="16"><path d="M946.656318 316.671982l-84.171311 336.649122c0 61.918295-50.249912 112.168207-112.168207 112.168207h-308.616101c-61.990545 0-112.168207-50.249912-112.168208-112.168207L273.3942 316.671982h0.252875L217.255909 148.365484H77.054681c-15.569886 0-28.105271-12.535384-28.10527-28.105271 0-15.461511 12.535384-28.033021 28.10527-28.03302h181.564383l70.010302 224.444789h618.026952zM338.852748 372.810273l46.709659 280.510831c0 30.959148 25.179143 56.138291 56.138292 56.138291h308.616101c30.959148 0 56.029916-25.179143 56.029916-56.138291l70.190926-280.510831H338.852748z m102.847951 448.817329c30.959148 0 56.138291 25.070768 56.138291 56.138291 0 30.959148-25.179143 56.029916-56.138291 56.029916s-56.138291-25.070768-56.138292-56.029916c0-31.067523 25.179143-56.138291 56.138292-56.138291z m280.51083 0c31.067523 0 56.138291 25.070768 56.138291 56.138291 0 30.959148-25.070768 56.029916-56.138291 56.029916-30.959148 0-56.029916-25.070768-56.029916-56.029916-0.036125-31.067523 25.070768-56.138291 56.029916-56.138291z" fill="#231815" p-id="1404"></path></svg>
           购物车（0）
         </a >
         <div class="shopping">购物车中还没有商品，赶紧选购吧！</div>
@@ -259,33 +598,488 @@
       <div class="list">
         <ul class="out">
           <li class="block"></li>
-          <li class="a1">Xiaomi手机
-            <ul class="pic">
-              <li>
-                <a href="#">
+          <li class="a">Xiaomi手机
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
 
-                </a>
-              </li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-            </ul>
           </li>
-          <li class="a2">Redmi手机</li>
-          <li class="a3">电视</li>
-          <li class="a4">笔记本</li>
-          <li class="a5">平板</li>
-          <li class="a6">家电</li>
-          <li class="a7">路由器</li>
-          <li class="a8">服务中心</li>
-          <li class="a9">社区</li>
+          <li class="a">Redmi手机
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="a">电视
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="a">笔记本
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="a">平板
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="a">家电
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="a">路由器
+            <div>
+              <ul class="pic">
+                <li>
+                  <a href="#">
+                    <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                    <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                  </a>
+                </li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+                <li><a href="#">
+                  <img src="www-mi-com-8m4cioe\img\320x220\d7a15df55e98e4163390096ed05b1ef5.png" alt="">
+                  <span>Xiaomi 12S Ultra</span><br><span>5999元起</span>
+                </a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="a2"><a href="#">服务中心</a></li>
+          <li class="a2"><a href="#">社区</a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <input type="search" placeholder="黑鲨5">
+        <button><span class="icon icon-search"></span></button>
+        <ul class="suggestions">
+          <li>全部商品</li>
+          <li>红米</li>
+          <li>手机</li>
+          <li>黑鲨5</li>
+          <li>冰箱</li>
+          <li>电视</li>
+          <li>洗衣机</li>
+          <li>Redmi G 2021</li>
         </ul>
       </div>
     </section>
   </header>
   <main>
+    <aside class="main-header">
+      <ul class="body-list-ul">
+        <li class="body-list">手机
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12X</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 11 青春活力版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 Pro 系列</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 4G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 5G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi MIX 4</span> </a>
+          </div>
+        </li>
+        <li class="body-list">电视
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12X</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 11 青春活力版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 Pro 系列</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 4G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 5G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi MIX 4</span> </a>
+          </div>
+        </li>
+        <li class="body-list">笔记本 平板
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12X</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 11 青春活力版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 Pro 系列</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 4G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 5G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi</span> </a>
+          </div>
+        </li>
+        <li class="body-list">出行 穿戴
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+          </div>
+        </li>
+        <li class="body-list">耳机 音箱
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12X</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 11 青春活力版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 Pro 系列</span> </a>
+          </div>
+        </li>
+        <li class="body-list">家电
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12X</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 11 青春活力版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 Pro 系列</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 4G</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11 5G</span> </a>
+          </div>
+        </li>
+        <li class="body-list">智能 路由器
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+          </div>
+        </li>
+        <li class="body-list">电源 配件
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+          </div>
+        </li>
+        <li class="body-list">健康 儿童
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro</span> </a>
+          </div>
+        </li>
+        <li class="body-list">生活 箱包
+          <div>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Ultra</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12S Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi 12 Pro 天玑版</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro+</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11T Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Note 11SE</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Xiaomi Civi 1S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>黑鲨5</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi 10A</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 Pro</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K40S</span> </a>
+            <a href="#"><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""><span>Redmi K50 电竞版</span> </a>
+          </div>
+        </li>
+      </ul>
+      <section class="slider">
+        <input type="radio" id="bl1" name="blbl" checked>
+        <input type="radio" id="bl2" name="blbl">
+        <input type="radio" id="bl3" name="blbl">
+        <input type="radio" id="bl4" name="blbl">
+
+        <div class="main-img">
+          <img src="www-mi-com-8m4cioe\img\head1\ce029906e8b21a65cc3ec4966e61ff7d.jpeg" alt="">
+          <img src="www-mi-com-8m4cioe\img\head1\1b948da8a19fe290d46ae532b54afe7b.jpeg" alt="">
+          <img src="www-mi-com-8m4cioe\img\head1\36b45c624f42fa81732457e3f9773dbd.jpeg" alt="">
+          <img src="www-mi-com-8m4cioe\img\head1\4b3ea061939040707aa775043fe86884.jpeg" alt="">
+        </div>
+        <div class="lab">
+          <label for="bl1"></label>
+          <label for="bl2"></label>
+          <label for="bl3"></label>
+          <label for="bl4"></label>
+        </div>
+      </section>
+      <section class="main-bottom">
+          <ul>
+            <li><a href="#"><img src="www-mi-com-8m4cioe\img\icon\82abdba456e8caaea5848a0cddce03db.png" alt="">保障服务</a></li>
+            <li><a href="#"><img src="www-mi-com-8m4cioe\img\icon\806f2dfb2d27978e33fe3815d3851fa3.png" alt="">企业团购</a></li>
+            <li><a href="#"><img src="www-mi-com-8m4cioe\img\icon\eded6fa3b897a058163e2485532c4f10.png" alt="">F码通道</a></li>
+            <li><a href="#"><img src="www-mi-com-8m4cioe\img\icon\43a3195efa6a3cc7662efed8e7abe8bf.png" alt="">米粉卡</a></li>
+            <li><a href="#"><img src="www-mi-com-8m4cioe\img\icon\f4846bca6010a0deb9f85464409862af.png" alt="">以旧换新</a></li>
+            <li><a href="#"><img src="www-mi-com-8m4cioe\img\icon\9a76d7636b08e0988efb4fc384ae497b.png" alt="">话费充值</a></li>
+          </ul>
+          <div><a href="#"><img src="www-mi-com-8m4cioe\img\head2\290270b6fc499fc5fcb653417e99fe91.jpeg" alt=""></a></div>
+          <div><a href="#"><img src="www-mi-com-8m4cioe\img\head2\5d1892854c8bb165e755d68bde287d71.jpeg" alt=""></a></div>
+          <div><a href="#"><img src="www-mi-com-8m4cioe\img\head2\28c13d0d11b38ec17fa5d83bc6ba5912.jpeg" alt=""></a></div>
+      </section>
+    </aside>
 
 
   </main>
