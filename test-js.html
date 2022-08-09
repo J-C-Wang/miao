@@ -1,5 +1,5 @@
 <script>
-  x = 2550
+  x = 1440
   console.log( x * 1 ) // 输出x
   console.log( x * 2 ) // 输出x的两倍
   console.log( x * x ) // 输出x的平方
@@ -17,4 +17,18 @@
   console.log( x % 4 === 2 ) // 输出x做为年份时，当年是否会举办世界杯
   console.log(( x % 4 === 0 && x % 100 !== 0 ) || x % 400 === 0 ) // 输出x做为年份时，是否为闰年，是输出true，不是输出false，闰年的定义请自行查询
   console.log( (x % 2 !== 0 && x % 3 !== 0 && x % 5 !== 0 && x % 7 !== 0 && x !== 1) || x === 2 || x === 3 || x === 5 || x === 7) // 输出x是否为素数（此时x范围为100以内）
+
+  var a = 2
+  var b = 3
+  var c = 5
+  var d = 1
+  var e = 8
+  var f = 6
+
+  var x = (c * e - b * f) / (a * e - d * b)
+  var y = (c * d - f * a) / (b * d - a * e)
+
+  console.log (x)
+  console.log (y)
+  console.log (d * x + e * y)
   </script>
