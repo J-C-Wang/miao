@@ -513,7 +513,11 @@
   var x = Number(prompt())
   var y = Number(prompt())
 
-  var r = n - Math.ceil(y / x)
-
-  console.log (r)
+  if(n - y / x <= 0) {
+    n = 0
+  }
+  else {
+    n = n - Math.ceil(y / x)
+  }
+  console.log (n)
 </script>
