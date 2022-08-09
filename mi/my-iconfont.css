@@ -12,3 +12,6 @@
 .icon-bigarrow::before {
   content: '\E623';
 }
+.icon-morearrow::before {
+  content: '\E615';
+}

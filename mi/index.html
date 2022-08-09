@@ -50,6 +50,7 @@
           &:hover {
             .dow {
             display: block;
+            z-index: 99;
             }
           }
           .dow {
@@ -57,11 +58,12 @@
             display: none;
             padding: 13px;
             left: -40%;
-            top: 39px;
+            top: 28px;
             height: 124px;
             width: 95px;
             line-height:24px;
             box-shadow: 0 0 3px 3px rgba(66, 66, 66, 0.1);
+            background-color: #fff;
             .img1 {
               display: block;
               position: absolute;
@@ -550,10 +552,978 @@
           }
         }
       }
+      .main-all {
+        position: relative;
+        background-color: #f5f5f5;
+        .mobile-phone {
+          height: 7095px;
+          width: 1226px;
+          margin: auto;
+          position: relative;
+          .title1 {
+            position: relative;
+            top: 26px;
+            img {
+              width: 1226px;
+              height: 120px;
+            }
+          }
+          .mobilephone-title {
+            display: block;
+            position: relative;
+            top: 23px;
+            margin-top: 23px;
+            height: 58px;
+            h2 {
+              color: #333333;
+              font-size: 22px;
+              line-height: 58px;
+              margin: 0;
+              width: 1134px;
+            }
+            .see-more {
+              position: absolute;
+              top: 0;
+              left: 1134px;
+              color: #424242;
+              font-size: 16px;
+              text-decoration: none;
+              line-height: 58px;
+              transition: .4s;
+              span {
+                height: 12px;
+                width: 12px;
+                padding: 4px;
+                margin-left: 8px;
+                font-size: 12px;
+                line-height: 12px;
+                border-radius: 16px;
+                background-color: #B0B0B0;
+                color: #fff;
+                vertical-align: 1px;
+                transition: .4s;
+              }
+              &:hover {
+                  color: rgb(255,106,0);
+                  transition: .4s;
+                  span {
+                    background-color: rgb(255,106,0);
+                    transition: .4s;
+                  }
+              }
+            }
+            .mobilephone {
+              height: 614px;
+              width: 234px;
+              position: absolute;
+              top: 58px;
+              .head-picture {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                height: 614px;
+                width: 234px;
+                li {
+                  position: relative;
+                }
+                &:hover {
+                  box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                  top: -3px;
+                }
+              }
+              .main-picture {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                align-content: space-between;
+                flex-wrap: wrap;
 
+                position: relative;
+                left: 250px;
+                top: -100%;
+                width: 976px;
+                height: 616px;
+                li {
+                  height: 260px;
+                  width: 234px;
+                  padding: 20px 0;
+                  background-color: #fff;
+                  text-align: center;
+                  position: relative;
+                  transition: 0.6s ;
+                  a {
+                    text-decoration: none;
+                    div {
+                      margin: 0 auto 18px;
+                      img {
+                      width: 160px;
+                      height: 160px;
+                      }
+                    }
+                    span {
+                      font-size: 14px;
+                      color: #000;
+                      margin-bottom: 2px;
+                    }
+                    p:nth-child(3) {
+                      font-size: 12px;
+                      color: #B0B0B0;
+                      margin: 2px 10px 10px 10px;
+                      overflow: hidden;
+                      text-overflow: ellipsis;
+                      width: 214px;
+                      white-space: nowrap;
+                    }
+                    p:nth-child(4) {
+                      color: rgb(255,106,0);
+                      font-size: 14px;
+                      margin-top: 10px;
+                    }
+                  }
+                  &:hover {
+                    box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                    top: -2px;
+                  }
+                }
+              }
+            }
+          }
+          .watch-title {
+            display: block;
+            position: relative;
+            top: 640px;
+            margin-top: 23px;
+            height: 58px;
+            h2 {
+              color: #333333;
+              font-size: 22px;
+              line-height: 58px;
+              margin: 0;
+              width: 500px;
+            }
+            .watch-switch {
+              display: inline-block;
+              position: absolute;
+              top: 0;
+              left: 1102px;
+              font-size: 16px;
+              text-decoration: none;
+              height: 0;
+              color: #424242;
+              >span {
+                border-bottom: 2px solid transparent;
+                margin-top: 21px;
+                margin-left: 30px;
+                float: right;
+                display: inline-block;
+                box-sizing: border-box;
+                transition: 0s 9999999s;
+                position: relative;
+              }
+              >span:nth-child(2) {
+                .main-picture1 {
+                  visibility: hidden;
+                  display: flex;
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  transition: 0s 9999999s;
+                  justify-content: space-between;
+                  align-content: space-between;
+                  flex-wrap: wrap;
+                  position: absolute;
+                  left: -882px;
+                  top: 37px;
+                  width: 976px;
+                  height: 616px;
+                  z-index: 30;
+                  background-color: #f5f5f5;
+                  li {
+                    height: 260px;
+                    width: 234px;
+                    padding: 20px 0;
+                    background-color: #fff;
+                    text-align: center;
+                    position: relative;
+                    &:last-child {
+                      height: 93px;
+                      padding: 50px 0 0 0 ;
+
+                    }
+                    a {
+                      text-decoration: none;
+                      div {
+                        margin: 0 auto 18px;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        }
+                      }
+                      .more {
+                        text-align: left;
+                        font-size: 18px;
+                        margin: 0 110px 0 30px;
+                        color: #000;
+                        small {
+                          font-size: 12px;
+                          color: #757575;
+                        }
+                        i::before {
+                          color: rgb(255,106,0);
+                          height: 48px;
+                          width: 48px;
+                          line-height: 48px;
+                          font-size: 48px;
+                          font-style: normal;
+                          position: absolute;
+                          top: 50px;
+                          left: 150px;
+                        }
+                      }
+                      >span {
+                        font-size: 14px;
+                        color: #000;
+                        margin-bottom: 2px;
+                      }
+                      p:nth-child(3) {
+                        font-size: 12px;
+                        color: #B0B0B0;
+                        margin: 2px 10px 10px 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 214px;
+                        white-space: nowrap;
+                      }
+                      p:nth-child(4) {
+                        color: rgb(255,106,0);
+                        font-size: 14px;
+                        margin-top: 10px;
+                      }
+                    }
+                    &:hover {
+                      box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                      top: -2px;
+                    }
+                  }
+                }
+                .main-picture1 {
+                  visibility: visible;
+                }
+              }
+              >span:nth-child(1) {
+                .main-picture2 {
+                  visibility: hidden;
+                  display: flex;
+                  justify-content: start;
+                  flex-wrap: wrap;
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  transition: 0s 9999999s;
+                  position: absolute;
+                  left: -944px;
+                  top: 37px;
+                  width: 976px;
+                  height: 616px;
+                  z-index: 31;
+                  background-color: #f5f5f5;
+                  li {
+                    height: 260px;
+                    width: 234px;
+                    padding: 20px 0;
+                    background-color: #fff;
+                    text-align: center;
+                    position: relative;
+                    &:last-child {
+                      float: left;
+                      height: 93px;
+                      padding: 50px 0 0 0 ;
+                      margin: 0 0 14px 14px;
+
+                    }
+                    a {
+                      text-decoration: none;
+                      div {
+                        margin: 0 auto 18px;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        }
+                      }
+                      .more {
+                        text-align: left;
+                        font-size: 18px;
+                        margin: 0 110px 0 30px;
+                        color: #000;
+                        small {
+                          font-size: 12px;
+                          color: #757575;
+                        }
+                        i::before {
+                          color: rgb(255,106,0);
+                          height: 48px;
+                          width: 48px;
+                          line-height: 48px;
+                          font-size: 48px;
+                          font-style: normal;
+                          position: absolute;
+                          top: 50px;
+                          left: 150px;
+                        }
+                      }
+
+                      >span {
+                        font-size: 14px;
+                        color: #000;
+                        margin-bottom: 2px;
+                      }
+                      p:nth-child(3) {
+                        font-size: 12px;
+                        color: #B0B0B0;
+                        margin: 2px 10px 10px 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 214px;
+                        white-space: nowrap;
+                      }
+                      p:nth-child(4) {
+                        color: rgb(255,106,0);
+                        font-size: 14px;
+                        margin-top: 10px;
+                      }
+                    }
+                    &:hover {
+                      box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                      top: -2px;
+                    }
+                  }
+                }
+              }
+              >span:nth-child(2) {
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                .main-picture1 {
+                  visibility: visible;
+                }
+              }
+              &:hover > span {
+                color: #424242;
+                transition: none;
+                border-bottom: 2px solid transparent;
+              }
+              &:hover > span:nth-child(2) .main-picture1 {
+                visibility: hidden;
+                transition: none;
+              }
+              &:hover > span:nth-child(1) .main-picture2 {
+                visibility: hidden;
+                transition: none;
+              }
+              >span:nth-child(2):hover{
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                transition: none;
+              }
+              >span:nth-child(1):hover {
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                transition: none;
+              }
+              >span:nth-child(2):hover .main-picture1 {
+                visibility: visible;
+                transition: none;
+              }
+              >span:nth-child(1):hover .main-picture2 {
+                visibility: visible;
+                transition: none;
+              }
+            }
+            .watch-pic {
+              height: 614px;
+              width: 1226px;
+              position: absolute;
+              top: 58px;
+              .head-picture {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                height: 614px;
+                width: 234px;
+                li {
+                  position: relative;
+                }
+                &:hover {
+                  box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                  top: -3px;
+                }
+              }
+            }
+          }
+          .pad-title {
+            display: block;
+            position: relative;
+            top: 1255px;
+            margin-top: 23px;
+            height: 58px;
+            h2 {
+              color: #333333;
+              font-size: 22px;
+              line-height: 58px;
+              margin: 0;
+              width: 1134px;
+            }
+            .pad-switch {
+              display: inline-block;
+              position: absolute;
+              top: 0;
+              left: 1164px;
+              font-size: 16px;
+              text-decoration: none;
+              height: 0;
+              color: #424242;
+              >span {
+                border-bottom: 2px solid transparent;
+                margin-top: 21px;
+                margin-left: 30px;
+                float: right;
+                display: inline-block;
+                box-sizing: border-box;
+                transition: 0s 9999999s;
+                position: relative;
+              }
+              >span:nth-child(1) {
+                .main-picture1 {
+                  visibility: hidden;
+                  display: flex;
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  transition: 0s 9999999s;
+                  justify-content: space-between;
+                  align-content: space-between;
+                  flex-wrap: wrap;
+                  position: absolute;
+                  left: -942px;
+                  top: 37px;
+                  width: 976px;
+                  height: 616px;
+                  z-index: 30;
+                  background-color: #f5f5f5;
+                  li {
+                    height: 260px;
+                    width: 234px;
+                    padding: 20px 0;
+                    background-color: #fff;
+                    text-align: center;
+                    position: relative;
+                    &:last-child {
+                      height: 93px;
+                      padding: 50px 0 0 0 ;
+
+                    }
+                    a {
+                      text-decoration: none;
+                      div {
+                        margin: 0 auto 18px;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        }
+                      }
+                      .more {
+                        text-align: left;
+                        font-size: 18px;
+                        margin: 0 110px 0 30px;
+                        color: #000;
+                        small {
+                          font-size: 12px;
+                          color: #757575;
+                        }
+                        i::before {
+                          color: rgb(255,106,0);
+                          height: 48px;
+                          width: 48px;
+                          line-height: 48px;
+                          font-size: 48px;
+                          font-style: normal;
+                          position: absolute;
+                          top: 50px;
+                          left: 150px;
+                        }
+                      }
+                      >span {
+                        font-size: 14px;
+                        color: #000;
+                        margin-bottom: 2px;
+                      }
+                      p:nth-child(3) {
+                        font-size: 12px;
+                        color: #B0B0B0;
+                        margin: 2px 10px 10px 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 214px;
+                        white-space: nowrap;
+                      }
+                      p:nth-child(4) {
+                        color: rgb(255,106,0);
+                        font-size: 14px;
+                        margin-top: 10px;
+                      }
+                    }
+                    &:hover {
+                      box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                      top: -2px;
+                    }
+                  }
+                }
+                .main-picture1 {
+                  visibility: visible;
+                }
+              }
+              >span:nth-child(2) {
+                .main-picture2 {
+                  visibility: hidden;
+                  display: flex;
+                  justify-content: start;
+                  flex-wrap: wrap;
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  transition: 0s 9999999s;
+                  position: absolute;
+                  left: -942px;
+                  top: 37px;
+                  width: 976px;
+                  height: 616px;
+                  z-index: 31;
+                  background-color: #f5f5f5;
+                  li {
+                    height: 260px;
+                    width: 234px;
+                    padding: 20px 0;
+                    background-color: #fff;
+                    text-align: center;
+                    position: relative;
+                    &:last-child {
+                      float: left;
+                      height: 93px;
+                      padding: 50px 0 0 0 ;
+                      margin: 0 0 14px 14px;
+
+                    }
+                    a {
+                      text-decoration: none;
+                      div {
+                        margin: 0 auto 18px;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        }
+                      }
+                      .more {
+                        text-align: left;
+                        font-size: 18px;
+                        margin: 0 110px 0 30px;
+                        color: #000;
+                        small {
+                          font-size: 12px;
+                          color: #757575;
+                        }
+                        i::before {
+                          color: rgb(255,106,0);
+                          height: 48px;
+                          width: 48px;
+                          line-height: 48px;
+                          font-size: 48px;
+                          font-style: normal;
+                          position: absolute;
+                          top: 50px;
+                          left: 150px;
+                        }
+                      }
+
+                      >span {
+                        font-size: 14px;
+                        color: #000;
+                        margin-bottom: 2px;
+                      }
+                      p:nth-child(3) {
+                        font-size: 12px;
+                        color: #B0B0B0;
+                        margin: 2px 10px 10px 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 214px;
+                        white-space: nowrap;
+                      }
+                      p:nth-child(4) {
+                        color: rgb(255,106,0);
+                        font-size: 14px;
+                        margin-top: 10px;
+                      }
+                    }
+                    &:hover {
+                      box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                      top: -2px;
+                    }
+                  }
+                }
+              }
+              >span:nth-child(1) {
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                .main-picture1 {
+                  visibility: visible;
+                }
+              }
+              &:hover > span {
+                color: #424242;
+                transition: none;
+                border-bottom: 2px solid transparent;
+              }
+              &:hover > span:first-child .main-picture1 {
+                visibility: hidden;
+                transition: none;
+              }
+              &:hover > span:nth-child(2) .main-picture2 {
+                visibility: hidden;
+                transition: none;
+              }
+              >span:first-child:hover{
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                transition: none;
+              }
+              >span:nth-child(2):hover {
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                transition: none;
+              }
+              >span:first-child:hover .main-picture1 {
+                visibility: visible;
+                transition: none;
+              }
+              >span:nth-child(2):hover .main-picture2 {
+                visibility: visible;
+                transition: none;
+              }
+            }
+            .pad-pic {
+              height: 614px;
+              width: 1226px;
+              position: absolute;
+              top: 58px;
+              .head-picture {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                height: 614px;
+                width: 234px;
+                li {
+                  position: relative;
+                }
+                &:hover {
+                  box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                  top: -3px;
+                }
+              }
+            }
+          }
+          .homeapp-title {
+            display: block;
+            position: relative;
+            top: 1870px;
+            margin-top: 23px;
+            height: 58px;
+            h2 {
+              color: #333333;
+              font-size: 22px;
+              line-height: 58px;
+              margin: 0;
+              width: 500px;
+            }
+            .watch-switch {
+              display: inline-block;
+              position: absolute;
+              top: 0;
+              left: 1070px;
+              font-size: 16px;
+              text-decoration: none;
+              height: 0;
+              color: #424242;
+              >span {
+                border-bottom: 2px solid transparent;
+                margin-top: 21px;
+                margin-left: 30px;
+                float: right;
+                display: inline-block;
+                box-sizing: border-box;
+                transition: 0s 9999999s;
+                position: relative;
+              }
+              >span:nth-child(2) {
+                .main-picture1 {
+                  visibility: hidden;
+                  display: flex;
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  transition: 0s 9999999s;
+                  justify-content: space-between;
+                  align-content: space-between;
+                  flex-wrap: wrap;
+                  position: absolute;
+                  left: -850px;
+                  top: 37px;
+                  width: 976px;
+                  height: 616px;
+                  z-index: 30;
+                  background-color: #f5f5f5;
+                  li {
+                    height: 260px;
+                    width: 234px;
+                    padding: 20px 0;
+                    background-color: #fff;
+                    text-align: center;
+                    position: relative;
+                    &:last-child {
+                      height: 93px;
+                      padding: 50px 0 0 0 ;
+
+                    }
+                    a {
+                      text-decoration: none;
+                      div {
+                        margin: 0 auto 18px;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        }
+                      }
+                      .more {
+                        text-align: left;
+                        font-size: 18px;
+                        margin: 0 110px 0 30px;
+                        color: #000;
+                        small {
+                          font-size: 12px;
+                          color: #757575;
+                        }
+                        i::before {
+                          color: rgb(255,106,0);
+                          height: 48px;
+                          width: 48px;
+                          line-height: 48px;
+                          font-size: 48px;
+                          font-style: normal;
+                          position: absolute;
+                          top: 50px;
+                          left: 150px;
+                        }
+                      }
+                      >span {
+                        font-size: 14px;
+                        color: #000;
+                        margin-bottom: 2px;
+                      }
+                      p:nth-child(3) {
+                        font-size: 12px;
+                        color: #B0B0B0;
+                        margin: 2px 10px 10px 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 214px;
+                        white-space: nowrap;
+                      }
+                      p:nth-child(4) {
+                        color: rgb(255,106,0);
+                        font-size: 14px;
+                        margin-top: 10px;
+                      }
+                    }
+                    &:hover {
+                      box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                      top: -2px;
+                    }
+                  }
+                }
+                .main-picture1 {
+                  visibility: visible;
+                }
+              }
+              >span:nth-child(1) {
+                .main-picture2 {
+                  visibility: hidden;
+                  display: flex;
+                  justify-content: space-between;
+                  align-content: space-between;
+                  flex-wrap: wrap;
+                  list-style: none;
+                  padding: 0;
+                  margin: 0;
+                  transition: 0s 9999999s;
+                  position: absolute;
+                  left: -912px;
+                  top: 37px;
+                  width: 976px;
+                  height: 616px;
+                  z-index: 31;
+                  background-color: #f5f5f5;
+                  li {
+                    height: 260px;
+                    width: 234px;
+                    padding: 20px 0;
+                    background-color: #fff;
+                    text-align: center;
+                    position: relative;
+                    &:last-child,nth-child(8) {
+                      float: ;
+                      height: 93px;
+                      padding: 50px 0 0 0 ;
+                      margin: 0 0 14px 0;
+                    }
+                    a {
+                      text-decoration: none;
+                      div {
+                        margin: 0 auto 18px;
+                        img {
+                        width: 160px;
+                        height: 160px;
+                        }
+                      }
+                      .more {
+                        text-align: left;
+                        font-size: 18px;
+                        margin: 0 110px 0 30px;
+                        color: #000;
+                        small {
+                          font-size: 12px;
+                          color: #757575;
+                        }
+                        i::before {
+                          color: rgb(255,106,0);
+                          height: 48px;
+                          width: 48px;
+                          line-height: 48px;
+                          font-size: 48px;
+                          font-style: normal;
+                          position: absolute;
+                          top: 50px;
+                          left: 150px;
+                        }
+                      }
+
+                      >span {
+                        font-size: 14px;
+                        color: #000;
+                        margin-bottom: 2px;
+                      }
+                      p:nth-child(3) {
+                        font-size: 12px;
+                        color: #B0B0B0;
+                        margin: 2px 10px 10px 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        width: 214px;
+                        white-space: nowrap;
+                      }
+                      p:nth-child(4) {
+                        color: rgb(255,106,0);
+                        font-size: 14px;
+                        margin-top: 10px;
+                      }
+                    }
+                    &:hover {
+                      box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                      top: -2px;
+                    }
+                  }
+                }
+              }
+              >span:nth-child(2) {
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                .main-picture1 {
+                  visibility: visible;
+                }
+              }
+              &:hover > span {
+                color: #424242;
+                transition: none;
+                border-bottom: 2px solid transparent;
+              }
+              &:hover > span:nth-child(2) .main-picture1 {
+                visibility: hidden;
+                transition: none;
+              }
+              &:hover > span:nth-child(1) .main-picture2 {
+                visibility: hidden;
+                transition: none;
+              }
+              >span:nth-child(2):hover{
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                transition: none;
+              }
+              >span:nth-child(1):hover {
+                color: rgb(255,106,0);
+                border-bottom: 2px solid rgb(255,106,0);
+                transition: none;
+              }
+              >span:nth-child(2):hover .main-picture1 {
+                visibility: visible;
+                transition: none;
+              }
+              >span:nth-child(1):hover .main-picture2 {
+                visibility: visible;
+                transition: none;
+              }
+            }
+            .watch-pic {
+              height: 614px;
+              width: 1226px;
+              position: absolute;
+              top: 58px;
+              .head-picture {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                justify-content: space-between;
+                position: relative;
+                height: 614px;
+                width: 234px;
+                li {
+                  position: relative;
+                }
+                &:hover {
+                  box-shadow:0 5px 10px 10px rgba(66, 66, 66, 0.1) ;
+                  top: -3px;
+                }
+              }
+            }
+          }
+        }
+
+      }
     }
 
+
   </style>
+  <script src="../less.js"></script>
+
 </head>
 <body>
   <header>
@@ -1080,10 +2050,123 @@
           <div><a href="#"><img src="www-mi-com-8m4cioe\img\head2\28c13d0d11b38ec17fa5d83bc6ba5912.jpeg" alt=""></a></div>
       </section>
     </aside>
+    <aside class="main-all">
+      <section class="mobile-phone">
+        <a href="#" class="title1"><img src="www-mi-com-8m4cioe\img\0cdf10d9501d28156b479cfe24c634dd8eb222d1.jpg@976w_550h_1c.webp" alt=""></a>
+        <div class="mobilephone-title">
+          <h2>手机</h2>
+          <a href="#" class="see-more">查看更多<span class="icon icon-bigarrow"></span></a>
+          <div class="mobilephone">
+            <ul class="head-picture">
+              <li>
+                <a href="#"><img src="www-mi-com-8m4cioe\img\6b99bcb716c8f76e1fc5475172bdfc27.webp" alt=""></a>
+              </li>
+            </ul>
+            <ul class="main-picture">
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\4edfc1f6882f01caeccdd11550ec88e9.png" alt=""></div><span>Xiaomi 12S Ultra</span><p>这真徕卡 | 专业徕卡影像</p><p>5999元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\c8eb4a86e68e5fc1ddeb4bf6a6f3d042.png" alt=""></div><span>Xiaomi 12S Pro</span><p>骁龙8+ 旗舰处理器 | 徕卡影像</p><p>4699元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""></div><span>Xiaomi 12S</span><p>小尺寸性能旗舰 | 徕卡影像</p><p>3999元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6c0553468a73cc445012577d8993dfc9.png" alt=""></div><span>Xiaomi 12 Pro 天玑版</span><p>全球首发天玑9000+ | 叶脉冷泵散热系统 | 2K A</p><p>3999元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\5cef72d0fea727cdf62b8e18b3d039d1.png" alt=""></div><span>Redmi Note 11T Pro+</span><p>天玑8100 | 真旗舰芯</p><p>1999元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\d8aeccb0bad7f28a44aa89b2ddb51010.png" alt=""></div><span>Redmi Note 11T Pro</span><p>天玑8100 | 真旗舰芯</p><p>1699元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6932d946285eb25ea28837eee21cbcd3.png" alt=""></div><span>Redmi Note 11SE</span><p>双卡双5G | 疾速登陆</p><p>999元起</p></a></li>
+              <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\c680c8d69a77ebfa924af7daa1a854be.png" alt=""></div><span>Xiaomi Civi 1S</span><p>原生美肌人像 | 奇迹阳光动人新色 | 骁龙778G Plu</p><p>2299元起</p></a></li>
+            </ul>
+          </div>
+        </div>
 
+        <div class="watch-title">
+          <h2>智能穿戴</h2>
+          <div class="watch-switch">
+            <span>穿戴
+              <ul class="main-picture2">
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\8a8de2281327e612f3f83fd1a4db6aea.webp" alt=""></div><span>小米真无线蓝牙耳机Air2 SE</span><p>大尺寸动圈单元 | 20小时持久续航 | 双麦克风通话降噪</p><p>129元</p></a></li>
+                <li><a href="#"><div class="more">浏览更多<br><small>穿戴</small><i class="icon icon-morearrow"></i></div></a></li>
+              </ul>
+            </span>
+            <span>热门
+              <ul class="main-picture1">
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\4edfc1f6882f01caeccdd11550ec88e9.png" alt=""></div><span>Xiaomi 12S Ultra</span><p>这真徕卡 | 专业徕卡影像</p><p>5999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\c8eb4a86e68e5fc1ddeb4bf6a6f3d042.png" alt=""></div><span>Xiaomi 12S Pro</span><p>骁龙8+ 旗舰处理器 | 徕卡影像</p><p>4699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""></div><span>Xiaomi 12S</span><p>小尺寸性能旗舰 | 徕卡影像</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6c0553468a73cc445012577d8993dfc9.png" alt=""></div><span>Xiaomi 12 Pro 天玑版</span><p>全球首发天玑9000+ | 叶脉冷泵散热系统 | 2K A</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\5cef72d0fea727cdf62b8e18b3d039d1.png" alt=""></div><span>Redmi Note 11T Pro+</span><p>天玑8100 | 真旗舰芯</p><p>1999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\d8aeccb0bad7f28a44aa89b2ddb51010.png" alt=""></div><span>Redmi Note 11T Pro</span><p>天玑8100 | 真旗舰芯</p><p>1699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6932d946285eb25ea28837eee21cbcd3.png" alt=""></div><span>Redmi Note 11SE</span><p>双卡双5G | 疾速登陆</p><p>999元起</p></a></li>
+                <li><a href="#"><div class="more">浏览更多<br><small>热门</small><i class="icon icon-morearrow"></i></div></a></li>
+              </ul>
+            </span>
+          </div>
+          <div class="watch-pic">
+            <ul class="head-picture">
+              <li>
+                <a href="#"><img src="www-mi-com-8m4cioe\img\6b99bcb716c8f76e1fc5475172bdfc27.webp" alt=""></a>
+              </li>
+          </div>
+        </div>
+        <div class="pad-title">
+          <h2>笔记本|平板</h2>
+          <div class="pad-switch">
+            <span>热门
+              <ul class="main-picture1">
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\4edfc1f6882f01caeccdd11550ec88e9.png" alt=""></div><span>Xiaomi 12S Ultra</span><p>这真徕卡 | 专业徕卡影像</p><p>5999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\c8eb4a86e68e5fc1ddeb4bf6a6f3d042.png" alt=""></div><span>Xiaomi 12S Pro</span><p>骁龙8+ 旗舰处理器 | 徕卡影像</p><p>4699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""></div><span>Xiaomi 12S</span><p>小尺寸性能旗舰 | 徕卡影像</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6c0553468a73cc445012577d8993dfc9.png" alt=""></div><span>Xiaomi 12 Pro 天玑版</span><p>全球首发天玑9000+ | 叶脉冷泵散热系统 | 2K A</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\5cef72d0fea727cdf62b8e18b3d039d1.png" alt=""></div><span>Redmi Note 11T Pro+</span><p>天玑8100 | 真旗舰芯</p><p>1999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\d8aeccb0bad7f28a44aa89b2ddb51010.png" alt=""></div><span>Redmi Note 11T Pro</span><p>天玑8100 | 真旗舰芯</p><p>1699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6932d946285eb25ea28837eee21cbcd3.png" alt=""></div><span>Redmi Note 11SE</span><p>双卡双5G | 疾速登陆</p><p>999元起</p></a></li>
+                <li><a href="#"><div class="more">浏览更多<br><small>热门</small><i class="icon icon-morearrow"></i></div></a></li>
+              </ul>
+            </span>
+          </div>
+          <div class="pad-pic">
+            <ul class="head-picture">
+              <li>
+                <a href="#"><img src="www-mi-com-8m4cioe\img\6b99bcb716c8f76e1fc5475172bdfc27.webp" alt=""></a>
+              </li>
+          </div>
+        </div>
+        <div class="homeapp-title">
+          <h2>家电</h2>
+          <div class="watch-switch">
+            <span>电视影音
+              <ul class="main-picture2">
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\4edfc1f6882f01caeccdd11550ec88e9.png" alt=""></div><span>Xiaomi 12S Ultra</span><p>这真徕卡 | 专业徕卡影像</p><p>5999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\c8eb4a86e68e5fc1ddeb4bf6a6f3d042.png" alt=""></div><span>Xiaomi 12S Pro</span><p>骁龙8+ 旗舰处理器 | 徕卡影像</p><p>4699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""></div><span>Xiaomi 12S</span><p>小尺寸性能旗舰 | 徕卡影像</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6c0553468a73cc445012577d8993dfc9.png" alt=""></div><span>Xiaomi 12 Pro 天玑版</span><p>全球首发天玑9000+ | 叶脉冷泵散热系统 | 2K A</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\5cef72d0fea727cdf62b8e18b3d039d1.png" alt=""></div><span>Redmi Note 11T Pro+</span><p>天玑8100 | 真旗舰芯</p><p>1999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\d8aeccb0bad7f28a44aa89b2ddb51010.png" alt=""></div><span>Redmi Note 11T Pro</span><p>天玑8100 | 真旗舰芯</p><p>1699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6932d946285eb25ea28837eee21cbcd3.png" alt=""></div><span>Redmi Note 11SE</span><p>双卡双5G | 疾速登陆</p><p>999元起</p></a></li>
+                <li><a href="#"><div class="more">浏览更多<br><small>热门</small><i class="icon icon-morearrow"></i></div></a></li>
+                <li><a href="#"><div class="more">浏览更多<br><small>热门</small><i class="icon icon-morearrow"></i></div></a></li>
+              </ul>
+            </span>
+            <span>热门
+              <ul class="main-picture1">
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\4edfc1f6882f01caeccdd11550ec88e9.png" alt=""></div><span>Xiaomi 12S Ultra</span><p>这真徕卡 | 专业徕卡影像</p><p>5999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\c8eb4a86e68e5fc1ddeb4bf6a6f3d042.png" alt=""></div><span>Xiaomi 12S Pro</span><p>骁龙8+ 旗舰处理器 | 徕卡影像</p><p>4699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\b883131e62133041d7ac8272c17762b0.png" alt=""></div><span>Xiaomi 12S</span><p>小尺寸性能旗舰 | 徕卡影像</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6c0553468a73cc445012577d8993dfc9.png" alt=""></div><span>Xiaomi 12 Pro 天玑版</span><p>全球首发天玑9000+ | 叶脉冷泵散热系统 | 2K A</p><p>3999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\5cef72d0fea727cdf62b8e18b3d039d1.png" alt=""></div><span>Redmi Note 11T Pro+</span><p>天玑8100 | 真旗舰芯</p><p>1999元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\d8aeccb0bad7f28a44aa89b2ddb51010.png" alt=""></div><span>Redmi Note 11T Pro</span><p>天玑8100 | 真旗舰芯</p><p>1699元起</p></a></li>
+                <li><a href="#"><div><img src="www-mi-com-8m4cioe\img\80x80\6932d946285eb25ea28837eee21cbcd3.png" alt=""></div><span>Redmi Note 11SE</span><p>双卡双5G | 疾速登陆</p><p>999元起</p></a></li>
+                <li><a href="#"><div class="more">浏览更多<br><small>热门</small><i class="icon icon-morearrow"></i></div></a></li>
+              </ul>
+            </span>
+          </div>
+          <div class="watch-pic">
+            <ul class="head-picture">
+              <li>
+                <a href="#"><img src="www-mi-com-8m4cioe\img\6b99bcb716c8f76e1fc5475172bdfc27.webp" alt=""></a>
+              </li>
+          </div>
+        </div>
+      </section>
+    </aside>
 
   </main>
   <footer></footer>
 </body>
-<script src="../less.js"></script>
 </html>
