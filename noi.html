@@ -842,3 +842,44 @@
   hn = an * 0.5 ** 2
   console.log(Sn.toFixed(4),hn.toFixed(7))
 </script>
+<script id="ch0105/21">
+  var n = Number(prompt())
+  var m
+
+  while(n !== 1) {
+    if(n % 2 === 0) {
+      m = n
+      n = n / 2
+      console.log(m + "/2=" + n)
+    }
+    else {
+      m = n
+      n = n * 3 + 1
+      console.log(m + "*3+1=" + n)
+    }
+  }
+  console.log('End')
+</script>
+<script id="ch0105/22">
+  var n = 12
+  var a = 300
+  var save = 0
+  var store = 0
+
+  for(var x = 1;x <= n;x++) {
+    var need = Number(prompt())
+    save = save + a - need
+    while(save >= 100) {
+      store = store + (save - save % 100)
+      save = save % 100
+    }
+    if(save < 0) {
+      console.log(-x)
+      break
+    }
+  }
+  if(save >= 0) {
+    store = store * 1.2 + save
+    console.log(store)
+  }
+</script>
