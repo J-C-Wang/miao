@@ -883,3 +883,56 @@
     console.log(store)
   }
 </script>
+<script id="ch0105/23">
+  var m = Number(prompt())
+  var n = Number(prompt())
+  var r = 0
+  for(var x = 1;x <= n;x++) {
+    var num = Number(prompt())
+    if(num > m){
+      r++
+    }
+    else {
+      m = m - num
+    }
+  }
+  console.log(r)
+</script>
+<script id="ch0105/24">
+  var n = Number(prompt())
+  var r = 0
+  var out = 0
+
+  for(var x = 1;x <= n;x++) {
+    var num1 = Number(prompt())
+    var num2 = Number(prompt())
+    if(num1 >= 90 && num1 <= 140){
+      if(num2 >= 60 && num2 <= 90) {
+        r++
+        if(r > out) {
+          out = r
+        }
+      }
+      else {
+        r = 0
+      }
+    }
+    else {
+      r = 0
+    }
+  }
+  console.log(out)
+</script>
+<script id="ch0105/25">
+  var r
+
+  for(var x = 81;x <= 342;x++) {
+    var x7 = Number(x.toString(7))
+    var x9 = Number(x.toString(9))
+    r = x7 % 10 * 100 + (x7 - x7 % 10) / 10 % 10 * 10 + (x7 - x7 % 100) / 100
+    if(r == x9) {
+      console.log(x,x7,x9)
+      break
+    }
+  }
+</script>
