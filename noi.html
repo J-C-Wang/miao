@@ -1077,7 +1077,7 @@
   console.log(Sn)
 
 </script>
-<script type="" id="ch0105/35">
+<script type="x" id="ch0105/35">
   var n = Number(prompt())
   var Sn = 1
   var an = 1
@@ -1089,4 +1089,31 @@
 
   console.log(Sn.toFixed(10))
 
+</script>
+<script type="x" id="ch0105/36">
+  var x = Number(prompt())
+  var n = Number(prompt())
+  var Sn = 1
+  var an = 1
+
+  for(var m = 1; m <= n;m++) {
+    an = x ** m
+    Sn = Sn + an
+  }
+
+  console.log(Sn.toFixed(2))
+</script>
+<script type="" id="ch0105/37">
+  var M = Number(prompt())
+  var N = Number(prompt())
+  var x = Number(prompt())
+  var a
+
+  while(N <= M) {
+    a = parseInt(M / N)
+    N = N + a
+    x = x - Math.ceil(M / N)
+  }
+
+  console.log(N)
 </script>
