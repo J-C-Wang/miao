@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>画图</title>
+  <style>
+    canvas {
+      border: 2px solid #f0f;
+      display: block;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <canvas width="500" height="400"></canvas>
+</body>
+<script>
+  var canvas = document.querySelector('canvas')
+  canvas.style.imageRendering = 'pixelated' //放大时的插帧方式：不插帧，直接放大像素
+  var ctx = canvas.getContext('2d')
+
+  function dot(x, y, color = 'black') {
+    x = Math.round(x)
+    y = Math.round(y)
+    ctx.fillStyle = color
+    ctx.fillRect(x, y, 1, 1)
+  }
+
+  /**
+   * YOUR TASK
+      * 在 坐标 (42, 42) 画出一个点
+      * 画一条实线
+      * 画一条一个实点一个空点的虚线
+      * 画一条两个实点两个空点的虚线
+      * 画一条三个实点两个空点的虚线
+      * 画一条45度的斜线
+      * 画一条30度的斜线（与x轴或y轴的夹角呈30度）
+      * 画一条跨越画布左上角和右下角的对角线
+      * 画一个空心矩形
+      * 画一个实心矩形
+      * 画两个个空心的圆，居中：
+        * 一个半径为50像素
+        * 一个半径为200像素
+      * 画一个实心的圆，半径至少为100像素
+      * 画一个【大小合适】的sin(x)的图像
+
+      * 画出rgb色彩空间的某一面（尺寸要大于100x100）
+         'rgb(255,255,0)'
+         '#ff00ff'
+        如果做出上一题后，尝试将其每个点的坐标乘以一个矩阵（如(2,0,0,2)或(1,0.27得到新的位置，即绘制出被线性变幻后的色彩空间某一面
+        可以考虑如下几种矩阵：
+           2 0
+           0 2
+           ------
+           1  0.27
+           0  1
+           ------
+           0.5    0.87
+           -0.87  0.5
+
+   */
+</script>
+<script>
+  // 不可更改上面的代码
+  // 你的代码写在这里
+  // YOUR CODE GOES BELOW
+
+  //1
+  dot(42 , 42, 'black')
+  //2
+  var j = 20
+  for(var i = 0 ;i <= 500;i++) {
+    dot(i,j,'red')
+  }
+  //3
+  var m = 40
+  for(var n = 0 ;n <= 500;n += 2) {
+    dot(n,m,'blue')
+  }
+  //4
+  var b = 60
+  for(var a = 0 ;a <= 500;a += 4) {
+    dot(a,b,'yellow')
+  }
+  for(a = 1 ;a <= 500;a += 4) {
+    dot(a,b,'orange')
+  }
+  //5
+  j = 80
+  for(i = 0 ;i <= 500;i += 5) {
+    dot(i,j,'green')
+  }
+  for(i = 1 ;i <= 500;i += 5) {
+    dot(i,j,'green')
+  }
+  for(i = 2 ;i <= 500;i += 5) {
+    dot(i,j,'green')
+  }
+  //6
+  var x = 0
+  var y = 0
+  while (x <= 400) {
+    dot(x,y,'pink')
+    x++
+    y++
+  }
+  //7
+  var x = 0
+  var y = 0
+  while (x <= 500) {
+    dot(x,y,'rgb(172,172,172)')
+    x++
+    y = x * Math.tan(Math.PI / 6)
+  }
+  //8
+  x = 0
+  y = 0
+  while (x <= 500) {
+    dot(x,y,'rgb(66,66,66)')
+    x++
+    y = x * 4 / 5
+  }
+  //9
+  y = 300
+  for(x = 300;x <= 400;x++) {
+    dot(x,y,'rgb(181,181,0)')
+  }
+  for(x = 300;x <= 400;x += 100) {
+    for(y = 300;y <= 360;y ++ ) {
+      dot(x,y,'rgb(181,181,0)')
+    }
+  }
+  for(x = 300;x <= 400;x++) {
+    dot(x,y,'rgb(181,181,0)')
+  }
+
+  for(x = 100;x <= 200;x++) {
+    for(y = 300;y <= 360;y++ ) {
+      dot(x,y,'rgb(181,181,0)')
+    }
+  }
+  //10
+
+  x = 0
+  y = 0
+  var x0 = 250
+  var y0 = 200
+  var r = 50
+  var a = Math.PI / 180
+  var b
+
+  r3 = 100
+  for(x = 150;x <= 350;x++) {
+    for(y = 100;y <= 300;y++) {
+      b = Math.abs(x - x0) ** 2 + Math.abs(y - y0) ** 2
+      if (b <= 10000) {
+        dot(x,y,'rgb(122,10,122)')
+      }
+    }
+  }
+
+  for(var deg = 0;deg <= 2 * Math.PI;deg += a) {
+    y = r * Math.sin(deg) + y0
+    x = r * Math.cos(deg) + x0
+    dot(x,y,'rgb(10,166,166)')
+  }
+  r2 = 200
+  a /= 4
+  for(var deg = 0;deg <= 2 * Math.PI;deg += a) {
+    y = r2 * Math.sin(deg) + y0
+    x = r2 * Math.cos(deg) + x0
+    dot(x,y,'rgb(10,166,166)')
+  }
+
+  //11
+  x = 0
+  y = 150
+  a = Math.PI / 90
+  for(var deg = 0;deg <= 6 * Math.PI;deg += a) {
+    y = y + Math.sin(deg)
+    dot(x,y,'rgb(30,120,66)')
+    x++
+  }
+
+  //12
+  x0 = 200
+  y0 = 50
+  for(x = x0;x <= x0 + 100;x++) {
+    for(y = y0;y <= y0 + 100;y++ ) {
+      color = 'rgb' + '(' + x +',' + y +',' + '0' + ')'
+      dot(x,y,color)
+    }
+  }
+</script>
+</html>
