@@ -2,7 +2,7 @@ var j_c_wang = {
   chunk: function (array, size = 1) {
     var result = []
     var count = array.length / size
-    for (var i = 0; i < count;i++) {
+    for (var i = 0; i < count; i++) {
       result[i] = array.splice(0, size)
     }
     return result
@@ -35,14 +35,14 @@ var j_c_wang = {
     return result
   },
 
-  fill: function (array,value,start = 0,end = array.length) {
+  fill: function (array, value, start = 0, end = array.length) {
     for (var i = start; i < end; i++) {
       array[i] = value
     }
     return array
   },
 
-  drop: function(array,n = 1) {
+  drop: function (array, n = 1) {
     for (var i = 0; i < n; i++) {
       array.shift()
       if (array === []) {
@@ -52,11 +52,12 @@ var j_c_wang = {
     return array
   },
 
-  findIndex: function (array, predicate = _.identity,fromIndex = 0) {
+  findIndex: function (array, predicate = _.identity, fromIndex = 0) {
     for (var i = fromIndex; i < array.length; i++) {
       if (typeof predicate == 'function') {
         if (predicate(array[i])) {
           return i
+        }
       }
       else {
         for (var key in predicate) {
@@ -65,8 +66,8 @@ var j_c_wang = {
           }
         }
       }
-    }
-    return -1
-  },
+      return -1
+    },
 
+  }
 }
