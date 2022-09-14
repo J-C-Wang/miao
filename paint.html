@@ -237,5 +237,177 @@
       dot(x4,y4,color)
     }
   }
+
+  function circle(x0,y0,r,fill) {
+    var x = x0 - r
+    var y = y0 - r
+    for(;x <= x0 + r;x++) {
+      for(;y <= x0 + r;y++) {
+        dot()
+        b = Math.abs(x - x0) ** 2 + Math.abs(y - y0) ** 2
+        if (b <= 10000) {
+          dot(x,y,'rgb(122,10,122)')
+        }
+      }
+    }
+  }
+
+  function fibb(n){
+    if(n == 1 || n == 2) {
+      return 1
+    }
+    else {
+      return fibb(n - 1) + fibb(n - 2)
+    }
+  }
+
+  var target = 10
+
+  function find(step,history) {
+    if(step == target) {
+      console.log(history)
+      return
+    }
+    if(step > target) {
+      return
+    }
+
+    find(step + 1,history + '1')
+    find(step + 2,history + '2')
+  }
+
+
+  function fill(array,value) {
+    for(var i = 0;i <= array.at(-1);i++) {
+      if(array[i] === value) {
+        return true
+      }
+    }
+    return false
+  }
+  function reverse(array) {
+    var mid
+    for (var i = 0;i <= array.at(-1) / 2;i++) {
+      mid = array[array.at(-i)]
+      array[array.at(-i)] = array[i]
+      array[i] = mid
+    }
+    return array
+  }
+
+  function randomArray(n) { //生成随机数组
+    var result = []
+    for(var i = 0;i < n;i++) {
+      result.push(Math.random() * n | 0)
+    }
+    return result
+  }
+
+  function isSorted(ary) { //判断一个数组是不是升序（非递减）
+    for(var i = 0;i < ary.length - 1;i++) {
+        if (ary[i] > ary[i + 1]) {
+          return false
+        }
+    }
+    return true
+  }
+
+  function bubbleSort(ary) { //冒泡排序 时间复杂度O（n * n） 空间复杂度O（1）
+    var mid
+    for (var j = nums.length;j > 1;j--) {
+        var judge = false
+      for(var i = 0;i < j - 1;i++) {
+        if (nums[i] > nums[i + 1]) {
+          mid = nums[i]
+          nums[i] = nums[i + 1]
+          nums[i + 1] = mid
+          judge = true
+        }
+      }
+        if (!judge) {
+            break
+        }
+    }
+    return nums
+  }
+  function selectSort(ary) { //选择排序 时间复杂度O（n * n） 空间复杂度O（1）
+    var mid
+    for (var j = 0;j <ary.length - 1;j++) {
+      for(var i = j + 1;i < ary.length;i++) {
+        if (min > ary[i]) {
+          mid = ary[j]
+          ary[j] = ary[i]
+          ary[i] = mid
+        }
+      }
+    }
+    return ary
+  }
+
+  function insertSort(ary) { //插入排序
+
+  }
+
+//归并排序 时间复杂度O(n * log(n)) 空间复杂度O(n + log(n))
+var sortArray = function(nums) {
+    var nums = nums
+    if (nums.length < 2) {
+        return nums
+    }
+    //拆分
+    var mid = Math.floor(nums.length / 2)
+    var left = nums.slice(0,mid)
+    var right = nums.slice(mid)
+    //排序
+    sortArray(left)
+    sortArray(right)
+    //合并
+    var i = 0
+    var j = 0
+    var k = 0
+    while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) {
+            nums[k] = left[i]
+            i++
+            k++
+        }
+        else {
+            nums[k] = right[j]
+            j++
+            k++
+        }
+    }
+    while (i < left.length) {
+        nums[k] = left[i]
+        i++
+        k++
+    }
+    while (j < right.length) {
+        nums[k] = right[j]
+        j++
+        k++
+    }
+    //返回
+    return nums
+};
+
+//快速排序(简单版)
+
+  function swap(ary,a,b) //交换两个元素位置
+
+  function quickSort(ary) {
+    pivot = //随机一个哨兵元素
+
+    swap(ary,pivotIndex,ary.length - 1) //哨兵元素放到数组末尾
+
+    var j = 0
+    for (var i = 0;i < ary.length - 1;i++) {
+      if(ary[i] < pivot) {
+        awap(ary,j++,i)
+      }
+    }
+
+
+  }
 </script>
 </html>
