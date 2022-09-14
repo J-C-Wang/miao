@@ -54,7 +54,7 @@ var j_c_wang = {
 
   findIndex: function (array, predicate = _.identity,fromIndex = 0) {
     for (var i = fromIndex; i < array.length; i++) {
-      if (typeof predicate == function) {
+      if (typeof predicate == 'function') {
         if (predicate(array[i])) {
           return i
       }
