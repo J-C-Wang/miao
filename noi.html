@@ -816,7 +816,7 @@
   }
   }
 </script>
-<script type="" id="ch0105/19">
+<script type="x" id="ch0105/19">
   var n = Number(prompt())
   var m = 0
   var t = 0
@@ -1248,7 +1248,7 @@
   for(var top = 2;top <= col;top++) {
     a = a + icon
   }
-  console.log(a + '\n') //第一行
+  console.log(a) //第一行
 
   if (type == 0) {
     for(var x = 2;x <= col - 1;x++) {
@@ -1256,15 +1256,15 @@
     }
     b = b + icon
     for(var y = 2;y <= row - 1;y++) {
-      console.log(b + '\n')
+      console.log('\n' + b)
     }
   } //空心行
   else {
     for(var i = 2;i <= row - 1;i++) {
-      console.log(a + '\n')
+      console.log('\n' + a)
     }
   } //实心行
-  console.log(a) //最后一行
+  console.log('\n' + a) //最后一行
 </script>
 <script type="x" id="ch0105/43">
   var n = Number(prompt())
@@ -1433,12 +1433,17 @@
   }
 </script>
 <script type="x" id="complete-numbers">
-  var m
+  var m = 1
   for(var n = 2;n <= 1000;n++) {
     m = 0
-    for(var i = 1;i <= n / 2;i++) {
+    for(var i = 2 ;i <= Math.sqrt(n);i++) {
       if(n % i == 0) {
-        m = m + i
+        if (i != Math.sqrt(n)) {
+          m = m + i + n / i
+        }
+        else {
+          m = m + i
+        }
       }
     }
     if(m == n) {
@@ -1446,16 +1451,17 @@
     }
   }
 </script>
-<script type="x" id="prime">
+<script type="" id="prime">
   var n = Number(prompt())
   var m = true
 
   if(n == 1){
     m = false
   }
-  for(var i = 2;i <= n / 2;i++) {
+  for(var i = 2;i <= Math.sqrt(n);i++) {
     if(n % i == 0) {
       m = false
+      break
     }
   }
   if(m) {
@@ -1532,4 +1538,41 @@
   l -=0.001
   l = parseInt(l * 1000) / 1000
   console.log(l)
+</script>
+<script type="" id="">
+
+  var factorial = function(x) {
+    var m = 1
+    for (var i = 1 ;i <= x ; i++) {
+      m = i * m
+    }
+    return m
+  }
+
+var narcissistic = function(n) {
+  var x = '' + n
+  var m = x.length
+  x = Number(x)
+  var k = 0
+
+  if (m == 1) {
+    return true
+  }
+  else if(m == 2)  {
+    return false
+  }
+  else {
+    for(var i = 1;i <= m;i++){
+      k = k + (n % 10) ** m
+      n = parseInt(n / 10)
+    }
+    if(k == x) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+}
+
 </script>
