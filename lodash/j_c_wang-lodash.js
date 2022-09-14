@@ -67,7 +67,7 @@ var j_c_wang = {
         }
       }
       return -1
-    },
+    }
 
-  }
+  },
 }
