@@ -1,5 +1,5 @@
 var j_c_wang = {
-  chunk: function (array, size) {
+  chunk: function (array, size = 1) {
     var result = []
     var count = array.length / size
     for (var i = 0; i < count;i++) {
@@ -54,9 +54,11 @@ var j_c_wang = {
 
   findIndex: function (array, predicate = _.identity,fromIndex = 0) {
     for (var i = fromIndex; i < array.length; i++) {
-      if (predicate(array[i])) {
-        return i
-      } else {
+      if (typeof predicate == function) {
+        if (predicate(array[i])) {
+          return i
+      }
+      else {
         for (var key in predicate) {
           if (key in array[i]) {
             return i + 1
