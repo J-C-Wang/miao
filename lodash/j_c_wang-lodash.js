@@ -6,7 +6,7 @@ var j_c_wang = {
       result[i] = array.splice(0, size)
     }
     return result
-  }
+  },
 
   compact: function (array) {
     var result = []
@@ -16,7 +16,7 @@ var j_c_wang = {
       }
     }
     return result
-  }
+  },
 
   concat: function (array, ...values) {
     var result = []
@@ -33,14 +33,14 @@ var j_c_wang = {
       }
     }
     return result
-  }
+  },
 
   fill: function (array,value,start = 0,end = array.length) {
     for (var i = start; i < end; i++) {
       array[i] = value
     }
     return array
-  }
+  },
 
   drop: function(array,n = 1) {
     for (var i = 0; i < n; i++) {
@@ -50,7 +50,7 @@ var j_c_wang = {
       }
     }
     return array
-  }
+  },
 
   findIndex: function (array, predicate = _.identity,fromIndex = 0) {
     for (var i = fromIndex; i < array.length; i++) {
@@ -65,9 +65,9 @@ var j_c_wang = {
       }
     }
     return -1
-  }
+  },
 
   findLastIndex: function() {
 
-  }
+  },
 }
