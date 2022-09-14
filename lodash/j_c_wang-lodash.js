@@ -67,7 +67,4 @@ var j_c_wang = {
     return -1
   },
 
-  findLastIndex: function() {
-
-  },
 }
