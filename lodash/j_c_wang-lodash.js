@@ -135,6 +135,22 @@ var j_c_wang = {
 
   flattenDeep: function flattenDeep(array) {
     var result = []
+    function concat(array, ...values) {
+      var result = []
+      for (var i = 0; i < array.length; i++) {
+        result.push(array[i])
+      }
+      for (var j = 0; j < values.length; j++) {
+        if (Array.isArray(values[j])) {
+          for (var k = 0; k < values[j].length; k++) {
+            result.push(values[j][k])
+          }
+        } else {
+          result.push(values[j])
+        }
+      }
+      return result
+    }
     for (var i = 0; i < array.length; i++) {
       if (Array.isArray(array[i])) {
         result = concat(result,flattenDeep(array[i]))
@@ -148,6 +164,20 @@ var j_c_wang = {
 
   flattenDepth: function flattenDepth(array, depth = 1) {
     var result = array
+    function flatten(array) {
+      var result = []
+      for (var i = 0; i < array.length; i++) {
+        if (Array.isArray(array[i])) {
+          for (var j = 0; j < array[i].length; j++) {
+            result.push(array[i][j])
+          }
+        }
+        else {
+          result.push(array[i])
+        }
+      }
+      return result
+    }
     for (var i = 0; i < depth; i++) {
       result = flatten(result)
     }
@@ -188,5 +218,69 @@ var j_c_wang = {
       }
     }
     return undefined
+  },
+
+  initial: function initial(array) {
+    if (array == []) {
+      return array
+    }
+    else {
+      array.pop()
+      return array
+    }
+  },
+
+
+  join: function join(array, separator = ',') {
+    if (array.length = 1) {
+      return array[0]
+    }
+    var result = ''
+    for (var i = 0; i < array.length; i++) {
+      result = result + array[i] + separator
+    }
+    result.pop()
+    return result
+  },
+
+
+  pull: function pull(array, ...values) {
+    var obj = {}
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      var val = values[i]
+      if (obj[val]) {
+        obj[val] = 1
+      }
+    }
+    for (var j = 0; j < array.length; j++) {
+      var ary = array[j]
+      if (!obj[ary]) {
+        result.push(ary)
+      }
+    }
+    return result
+  },
+
+  reverse: function reverse(array) {
+    var result = []
+    for (var i = array.length - 1; i > -1 ; i--) {
+      result.push(array[i])
+    }
+    array = result
+    return array
+  },
+
+  identity: function identity(value) {
+    return value
+  },
+
+  every: function every(collection, predicate =_.identity) {
+    for (var i = 0; i < collection.length; i++) {
+      if (!predicate(collection[i], i, collection)) {
+        return false
+      }
+    }
+    return true
   },
 }
