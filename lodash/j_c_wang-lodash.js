@@ -294,8 +294,16 @@ var j_c_wang = {
     return false
   },
 
-  countBy: function countBy(collection, iteratee = _.identity) {
-
+  countBy: function countBy(collection, iteratee) {
+    var map = {}
+    for (var i = 0; i < collection.length; i++) {
+      var col = iteratee(collection[i])
+      if (!map[col]) {
+        map[col] = 1
+      }
+      map[col]++
+    }
+    return map
   },
 
 
