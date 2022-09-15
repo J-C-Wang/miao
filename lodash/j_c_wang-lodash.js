@@ -232,7 +232,7 @@ var j_c_wang = {
 
 
   join: function join(array, separator = ',') {
-    if (array.length = 1) {
+    if (array.length == 1) {
       return array[0]
     }
     var result = ''
@@ -249,7 +249,7 @@ var j_c_wang = {
     var result = []
     for (var i = 0; i < array.length; i++) {
       var val = values[i]
-      if (obj[val]) {
+      if (!obj[val]) {
         obj[val] = 1
       }
     }
@@ -275,12 +275,58 @@ var j_c_wang = {
     return value
   },
 
-  every: function every(collection, predicate =_.identity) {
+  every: function every(collection, predicate) {
+
     for (var i = 0; i < collection.length; i++) {
-      if (!predicate(collection[i], i, collection)) {
+      if (!find(predicate)) {
         return false
       }
     }
     return true
   },
+
+  some: function some(collection, predicate) {
+    for (var i = 0; i < collection.length; i++) {
+      if (find(predicate)) {
+        return true
+      }
+    }
+    return false
+  },
+
+  countBy: function countBy(collection, iteratee = _.identity) {
+
+  },
+
+
+
+}
+function find(value) {
+  if (typeof value == 'function') {
+    if (value(array[i])) {
+      return true
+    }
+  }
+  else if (Array.isArray(value)) {
+    if (value[1] === array[i][value[0]]) {
+      return true
+    }
+  }
+  else if (typeof value == 'string') {
+      if (array[i][value] === true) {
+        return true
+      }
+  }
+  else if (typeof value == 'object') {
+    var judge = 1
+    for (var key in value) {
+      if (array[i][key] != value[key]) {
+        judge = 0
+        break
+      }
+    }
+    if (judge) {
+      return true
+    }
+  }
 }
