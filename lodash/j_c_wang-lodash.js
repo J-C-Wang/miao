@@ -278,7 +278,7 @@ var j_c_wang = {
   every: function every(collection, predicate) {
 
     for (var i = 0; i < collection.length; i++) {
-      if (!find(predicate)) {
+      if (!find(predicate,i,collection[i])) {
         return false
       }
     }
@@ -287,7 +287,7 @@ var j_c_wang = {
 
   some: function some(collection, predicate) {
     for (var i = 0; i < collection.length; i++) {
-      if (find(predicate)) {
+      if (find(predicate,i,collection[i])) {
         return true
       }
     }
@@ -301,26 +301,26 @@ var j_c_wang = {
 
 
 }
-function find(value) {
+function find(value,i,item) {
   if (typeof value == 'function') {
-    if (value(array[i])) {
+    if (value(item)) {
       return true
     }
   }
   else if (Array.isArray(value)) {
-    if (value[1] === array[i][value[0]]) {
+    if (value[1] === item[value[0]]) {
       return true
     }
   }
   else if (typeof value == 'string') {
-      if (array[i][value] === true) {
+      if (item[value] === true) {
         return true
       }
   }
   else if (typeof value == 'object') {
     var judge = 1
     for (var key in value) {
-      if (array[i][key] != value[key]) {
+      if (item[key] != value[key]) {
         judge = 0
         break
       }
