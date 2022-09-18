@@ -239,7 +239,7 @@ var j_c_wang = {
     for (var i = 0; i < array.length; i++) {
       result = result + array[i] + separator
     }
-    result.pop()
+    result.slice(0,result.length - 1)
     return result
   },
 
@@ -297,15 +297,72 @@ var j_c_wang = {
   countBy: function countBy(collection, iteratee) {
     var map = {}
     for (var i = 0; i < collection.length; i++) {
-      var col = iteratee(collection[i])
+      if (typeof iteratee == 'string') {
+        var col = collection[i][iteratee]
+      } else {
+        var col = iteratee(collection[i])
+      }
       if (!map[col]) {
-        map[col] = 1
+        map[col] = 0
       }
       map[col]++
     }
     return map
   },
 
+  difference: function difference(array, values) {
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      if (!(array[i] in values)) {
+        result.push(array[i])
+      }
+    }
+    return result
+  },
+
+  differenceBy: function differenceBy(array, values, iteratee) {
+    var map = {}
+    if (typeof iteratee === "string") {
+      var operatedAry = array.map(it => it[iteratee])
+      var operatedVal = values.map(it => it[iteratee])
+    } else if (typeof iteratee === "function") {
+      var operatedAry = array.map(it => iteratee(it))
+      var operatedVal = values.map(it => iteratee(it))
+    }
+
+    var result = []
+    for (var i = 0; i < array.length; i++) {
+      var judge = 1
+      for (var j = 0; j < values.length; j++) {
+        if (operatedAry[i] == operatedVal[j]) {
+          judge = 0
+        }
+      }
+      if (judge) {
+        result.push(array[i])
+      }
+    }
+
+    return result
+  },
+
+  groupBy: function groupBy(collection, iteratee) {
+    var map = {}
+    for (var i = 0; i < collection.length; i++) {
+      if (typeof iteratee == 'string') {
+        var col = collection[i][iteratee]
+      } else {
+        var col = iteratee(collection[i])
+      }
+      if (!map[col]) {
+        map[col] = [collection[i]]
+      }
+      else {
+        map[col].push(collection[i])
+      }
+    }
+    return map
+  }
 
 
 }
