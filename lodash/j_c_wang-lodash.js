@@ -327,6 +327,7 @@ var j_c_wang = {
       if (Array.isArray(values.at(-1))) {
         return this.difference(array, ...values)
       } else {
+        var result = []
         var lastary = values.pop()
         var val = flatten(...values)
         if (typeof lastary === "string") {
@@ -420,24 +421,25 @@ var j_c_wang = {
   },
 
   dropWhile: function dropWhile(array, predicate) {
+    var ary = array.slice()
     for (var i = 0; i < array.length; i++) {
       if (typeof predicate == 'function') {
         if (predicate(array[i])) {
-          array.shift()
+          ary.shift()
         } else {
           break
         }
       }
       else if (Array.isArray(predicate)) {
         if (predicate[1] === array[i][predicate[0]]) {
-          array.shift()
+          ary.shift()
         } else {
           break
         }
       }
       else if (typeof predicate == 'string') {
         if (array[i][predicate] === true) {
-          array.shift()
+          ary.shift()
         } else {
           break
         }
@@ -451,13 +453,13 @@ var j_c_wang = {
           }
         }
         if (judge) {
-          array.shift()
+          ary.shift()
         } else {
           break
         }
       }
     }
-    return array
+    return ary
   },
 
   fromPairs: function fromPairs(pairs) {
