@@ -311,7 +311,7 @@ var j_c_wang = {
 
   difference: function difference(array, ...values) {
     var result = []
-    var val = flatten(...values)
+    var val = flatten(values)
     for (var i = 0; i < array.length; i++) {
       if (!val.includes(array[i])) {
         result.push(array[i])
@@ -373,7 +373,8 @@ var j_c_wang = {
   },
 
   dropRight: function dropRight(array, n = 1) {
-    for (var i = array.length - 1; i >= array.length - n; i--) {
+    var len = array.length - n
+    for (var i = array.length - 1; i >= len; i--) {
       array.pop()
     }
     return array
@@ -384,16 +385,22 @@ var j_c_wang = {
       if (typeof predicate == 'function') {
         if (predicate(array[i])) {
           array.pop()
+        } else {
+          break
         }
       }
       else if (Array.isArray(predicate)) {
         if (predicate[1] === array[i][predicate[0]]) {
           array.pop()
+        } else {
+          break
         }
       }
       else if (typeof predicate == 'string') {
         if (array[i][predicate] === true) {
           array.pop()
+        } else {
+          break
         }
       }
       else if (typeof predicate == 'object') {
@@ -416,17 +423,23 @@ var j_c_wang = {
     for (var i = 0; i < array.length; i++) {
       if (typeof predicate == 'function') {
         if (predicate(array[i])) {
-          array.pop()
+          array.shift()
+        } else {
+          break
         }
       }
       else if (Array.isArray(predicate)) {
         if (predicate[1] === array[i][predicate[0]]) {
-          array.pop()
+          array.shift()
+        } else {
+          break
         }
       }
       else if (typeof predicate == 'string') {
         if (array[i][predicate] === true) {
-          array.pop()
+          array.shift()
+        } else {
+          break
         }
       }
       else if (typeof predicate == 'object') {
@@ -438,7 +451,9 @@ var j_c_wang = {
           }
         }
         if (judge) {
-          array.pop()
+          array.shift()
+        } else {
+          break
         }
       }
     }
