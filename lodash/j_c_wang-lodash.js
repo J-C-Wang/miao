@@ -419,7 +419,7 @@ var j_c_wang = {
     return array
   },
 
-  dropWhile: function dropRightWhile(array, predicate) {
+  dropWhile: function dropWhile(array, predicate) {
     for (var i = 0; i < array.length; i++) {
       if (typeof predicate == 'function') {
         if (predicate(array[i])) {
@@ -458,6 +458,40 @@ var j_c_wang = {
       }
     }
     return array
+  },
+
+  fromPairs: function fromPairs(pairs) {
+    var obj = {}
+    for (var i = 0; i < pairs.length; i++) {
+      let ary = pairs[i]
+      obj[ary[0]] = ary[1]
+    }
+    return obj
+  },
+
+  isEqual: function isEqual(value, other) {
+    return value === other
+  },
+
+  differenceWith: function differenceWith(array, ...values) {
+    if (values.length === 1) {
+      return this.difference(array, ...values)
+    } else if (values.length > 1) {
+      if (Array.isArray(values.at(-1))) {
+        return this.difference(array, ...values)
+      } else {
+        var ary = []
+        var val = values.pop()
+        for (var i = 0; i < array.length; i++) {
+          for (var j = 0; j < values.length; j++) {
+            if (val[0](array[i], values[j])) {
+              ary.push(array[i])
+            }
+          }
+        }
+        return ary
+      }
+    }
   },
 
 
