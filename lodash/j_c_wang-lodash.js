@@ -239,10 +239,9 @@ var j_c_wang = {
     for (var i = 0; i < array.length; i++) {
       result = result + array[i] + separator
     }
-    result.slice(0,result.length - 1)
-    return result
-  },
 
+    return result.slice(0,-1)
+  },
 
   pull: function pull(array, ...values) {
     var obj = {}
@@ -310,40 +309,49 @@ var j_c_wang = {
     return map
   },
 
-  difference: function difference(array, values) {
+  difference: function difference(array, ...values) {
     var result = []
+    var val = flatten(...values)
     for (var i = 0; i < array.length; i++) {
-      if (!(array[i] in values)) {
+      if (!val.includes(array[i])) {
         result.push(array[i])
       }
     }
     return result
   },
 
-  differenceBy: function differenceBy(array, values, iteratee) {
-    var map = {}
-    if (typeof iteratee === "string") {
-      var operatedAry = array.map(it => it[iteratee])
-      var operatedVal = values.map(it => it[iteratee])
-    } else if (typeof iteratee === "function") {
-      var operatedAry = array.map(it => iteratee(it))
-      var operatedVal = values.map(it => iteratee(it))
-    }
-
-    var result = []
-    for (var i = 0; i < array.length; i++) {
-      var judge = 1
-      for (var j = 0; j < values.length; j++) {
-        if (operatedAry[i] == operatedVal[j]) {
-          judge = 0
+  differenceBy: function differenceBy(array, ...values) {
+    if (values.length === 1) {
+      return this.difference(array,...values)
+    } else if (values.length > 1) {
+      if (Array.isArray(values.at(-1))) {
+        return this.difference(array, ...values)
+      } else {
+        var lastary = values.pop()
+        var val = flatten(...values)
+        if (typeof lastary === "string") {
+          var operatedAry = array.map(it => it[lastary])
+          var operatedVal = val.map(it => it[lastary])
+        } else if (typeof lastary === "function") {
+          var operatedAry = array.map(it => lastary(it))
+          var operatedVal = val.map(it => lastary(it))
         }
-      }
-      if (judge) {
-        result.push(array[i])
+        for (var i = 0; i < array.length; i++) {
+          var judge = 1
+          for (var j = 0; j < val.length; j++) {
+            if (operatedAry[i] == operatedVal[j]) {
+              judge = 0
+            }
+          }
+          if (judge) {
+            result.push(array[i])
+          }
+        }
+
+        return result
+
       }
     }
-
-    return result
   },
 
   groupBy: function groupBy(collection, iteratee) {
@@ -362,7 +370,80 @@ var j_c_wang = {
       }
     }
     return map
-  }
+  },
+
+  dropRight: function dropRight(array, n = 1) {
+    for (var i = array.length - 1; i >= array.length - n; i--) {
+      array.pop()
+    }
+    return array
+  },
+
+  dropRightWhile: function dropRightWhile(array, predicate) {
+    for (var i = array.length - 1; i >= 0; i--) {
+      if (typeof predicate == 'function') {
+        if (predicate(array[i])) {
+          array.pop()
+        }
+      }
+      else if (Array.isArray(predicate)) {
+        if (predicate[1] === array[i][predicate[0]]) {
+          array.pop()
+        }
+      }
+      else if (typeof predicate == 'string') {
+        if (array[i][predicate] === true) {
+          array.pop()
+        }
+      }
+      else if (typeof predicate == 'object') {
+        var judge = 1
+        for (var key in predicate) {
+          if (array[i][key] != predicate[key]) {
+            judge = 0
+            break
+          }
+        }
+        if (judge) {
+          array.pop()
+        }
+      }
+    }
+    return array
+  },
+
+  dropWhile: function dropRightWhile(array, predicate) {
+    for (var i = 0; i < array.length; i++) {
+      if (typeof predicate == 'function') {
+        if (predicate(array[i])) {
+          array.pop()
+        }
+      }
+      else if (Array.isArray(predicate)) {
+        if (predicate[1] === array[i][predicate[0]]) {
+          array.pop()
+        }
+      }
+      else if (typeof predicate == 'string') {
+        if (array[i][predicate] === true) {
+          array.pop()
+        }
+      }
+      else if (typeof predicate == 'object') {
+        var judge = 1
+        for (var key in predicate) {
+          if (array[i][key] != predicate[key]) {
+            judge = 0
+            break
+          }
+        }
+        if (judge) {
+          array.pop()
+        }
+      }
+    }
+    return array
+  },
 
 
 }
@@ -394,4 +475,19 @@ function find(value,i,item) {
       return true
     }
   }
+}
+
+function flatten(array) {
+  var result = []
+  for (var i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      for (var j = 0; j < array[i].length; j++) {
+        result.push(array[i][j])
+      }
+    }
+    else {
+      result.push(array[i])
+    }
+  }
+  return result
 }
